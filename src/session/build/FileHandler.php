@@ -13,7 +13,7 @@ class FileHandler implements InterfaceSession
 	protected $strstr = "<php exit();?>";
 
 	public function connect() {
-		$dir = $this->config["path"];
+		$dir = $this->config["file"]["path"];
 		if (!is_dir($dir)) {
 			mkdir($dir, 0755, true);
 		}
