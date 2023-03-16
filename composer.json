@@ -1,5 +1,5 @@
 {
-    "name": "letnn/cookie",
+    "name": "letnn/session",
     "description": "Session管理组件",
     "keywords": ["letnn", "session"],
     "license": "MIT",
