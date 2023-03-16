@@ -10,7 +10,7 @@ class FileHandler implements InterfaceSession
     
 	protected $file;
 
-	protected $strstr = "<php exit('letnn');?>";
+	protected $strstr = "<?php exit('letnn');?>";
 
 	public function connect() {
 		$dir = $this->config["file"]["path"];
