@@ -45,7 +45,7 @@ trait Base
 	final protected function getSessionId() {
 		$id = Cookie::get($this->session_name);
 		if (!$id) {
-			$id = 'willphp'.md5(microtime(true).mt_rand(1, 6));
+			$id = md5(microtime(true).mt_rand(1, 6));
 		}
 		Cookie::set($this->session_name, $id, $this->expire, "/", $this->config["domain"]);		
 		return $id;

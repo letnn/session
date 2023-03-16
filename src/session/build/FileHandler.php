@@ -10,7 +10,7 @@ class FileHandler implements InterfaceSession
     
 	protected $file;
 
-	protected $strstr = "<php exit();?>";
+	protected $strstr = "<php exit('letnn');?>";
 
 	public function connect() {
 		$dir = $this->config["file"]["path"];
@@ -25,13 +25,13 @@ class FileHandler implements InterfaceSession
 		if (!is_file($this->file)) {
 			return [];
 		}		
-		return unserialize(@file_get_contents($this->file));
+		return unserialize(str_replace($this->strstr, "", @file_get_contents($this->file)));
 	}
 
 	//保存数据
 	public function write()	{
 		$data = serialize($this->items);	
-		return @file_put_contents($this->file, $data, LOCK_EX);
+		return @file_put_contents($this->file, $this->strstr . $data, LOCK_EX);
 	}
 
 	public function gc() {
