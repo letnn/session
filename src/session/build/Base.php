@@ -116,7 +116,7 @@ trait Base
      * @param $name
      * @return bool
      */
-	public function del($name) {
+	public function delete($name) {
 		if (isset($this->items[$name])) {
 			unset($this->items[$name]);
 		}		
